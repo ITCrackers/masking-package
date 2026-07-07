@@ -17,7 +17,6 @@ class Validation
     public static function validateAadhaar(string $aadhaar): bool
     {
         return preg_match('/^\d{12}$/', $aadhaar) === 1;
-        // TODO: Add Verhoeff checksum validation
     }
 
     public static function validatePan(string $pan): bool
