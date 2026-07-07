@@ -8,7 +8,7 @@ class Masking
 {
     public static function demo()
     {
-        return "~Hello From IT Crackers Package~";
+        return "~Hello From IT Crackers Masking Package~";
     }
     /**
      * Mask Mobile Number
