@@ -2,6 +2,7 @@
     "name": "itcrackers/helper",
     "description": "Common utility package for Core PHP and PHP frameworks, providing masking, validation, and formatting helpers.",
     "type": "library",
+    "license": "MIT",
     "authors": [
         {
             "name": "IT Crackers",
