@@ -167,11 +167,11 @@ use ITCrackers\Helper\Validation;
 
 echo Masking::email('john@example.com');
 
-echo Masking::phone('9876543210');
+echo Masking::phone('8619844326');
 
 Validation::email('john@example.com');
 
-Validation::phone('9876543210');
+Validation::phone('8619844326');
 ```
 
 ---
@@ -210,13 +210,13 @@ jo***@example.com
 ## Phone Masking
 
 ```php
-Masking::phone('9876543210');
+Masking::phone('8619844326');
 ```
 
 Output
 
 ```
-98******10
+86******26
 ```
 
 ---
@@ -266,7 +266,7 @@ true
 ## Phone Validation
 
 ```php
-Validation::phone('9876543210');
+Validation::phone('8619844326');
 ```
 
 Output
@@ -323,7 +323,6 @@ itcrackers-helper/
 ├── src/
 │   ├── Masking.php
 │   ├── Validation.php
-│   ├── Formatter.php
 │   └── ...
 │
 ├── tests/
@@ -355,8 +354,6 @@ Example
 v1.0.0
 v1.1.0
 v1.1.1
-v1.2.0
-v2.0.0
 ```
 
 ---
