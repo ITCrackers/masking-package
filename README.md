@@ -3,27 +3,78 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/itcrackers/helper.svg)](https://packagist.org/packages/itcrackers/helper)
 [![Total Downloads](https://img.shields.io/packagist/dt/itcrackers/helper.svg)](https://packagist.org/packages/itcrackers/helper)
 [![License](https://img.shields.io/packagist/l/itcrackers/helper.svg)](LICENSE)
-[![PHP Version](https://img.shields.io/badge/PHP-%5E8.2-blue.svg)](https://www.php.net)
+[![PHP Version](https://img.shields.io/badge/PHP-8.2%2B-blue.svg)](https://www.php.net)
 
-A lightweight, framework-independent PHP helper package that provides masking, validation, and formatting utilities for Core PHP and PHP frameworks such as Laravel.
+A lightweight, framework-independent PHP utility package that provides **Masking**, **Validation**, and **Formatting** helpers for Core PHP and modern PHP frameworks such as Laravel.
 
 ---
 
-## ✨ Features
+## 📖 Table of Contents
 
+- Features
+- Requirements
+- Compatibility
+- Installation
+- Available Modules
+- Quick Start
+- Usage
+- Examples
+- Testing
+- Project Structure
+- Versioning
+- Changelog
+- Contributing
+- Security
+- Support
+- License
+- Author
+
+---
+
+# ✨ Features
+
+- Framework Independent
 - Supports Core PHP
 - Supports Laravel
 - PSR-4 Autoloading
-- Lightweight & Fast
-- Framework Independent
+- Lightweight
+- High Performance
 - Easy Integration
 - Zero Configuration
+- Clean API
+- Production Ready
+- Composer Installable
+- Fully Object-Oriented
 
 ---
 
-## 📦 Installation
+# ⚙️ System Requirements
 
-Install via Composer.
+| Software | Minimum Version |
+|----------|-----------------|
+| PHP | 8.2+ |
+| Composer | 2.5+ |
+
+---
+
+# 📋 Compatibility
+
+| Platform | Support |
+|----------|---------|
+| Core PHP | ✅ |
+| Laravel 11 | ✅ |
+| Laravel 12 | ✅ |
+| Symfony | ✅ |
+| CodeIgniter | ✅ |
+| CakePHP | ✅ |
+| Slim Framework | ✅ |
+| Yii Framework | ✅ |
+
+---
+
+# 📦 Installation
+
+Install the package via Composer.
 
 ```bash
 composer require itcrackers/helper
@@ -31,18 +82,35 @@ composer require itcrackers/helper
 
 ---
 
-## ⚙️ Requirements
+# 🚀 Quick Start
 
-| Requirement | Version |
-|------------|---------|
-| PHP | >= 8.2 |
-| Composer | Latest |
+## Core PHP
+
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+use ITCrackers\Helper\Masking;
+
+echo Masking::email('john@example.com');
+```
 
 ---
 
-# Available Modules
+## Laravel
 
-## Masking
+```php
+use ITCrackers\Helper\Masking;
+
+echo Masking::email('john@example.com');
+```
+
+---
+
+# 📚 Available Modules
+
+## 🔐 Masking
 
 Hide sensitive information before displaying it.
 
@@ -52,40 +120,40 @@ Hide sensitive information before displaying it.
 | phone() | Mask Mobile Number |
 | aadhaar() | Mask Aadhaar Number |
 | pan() | Mask PAN Number |
-| account() | Mask Bank Account Number |
-| card() | Mask Credit/Debit Card |
 | passport() | Mask Passport Number |
+| account() | Mask Bank Account Number |
+| card() | Mask Credit/Debit Card Number |
 
 ---
 
-## Validation
+## ✅ Validation
 
-Validate common data formats.
+Validate commonly used data formats.
 
 | Method | Description |
 |---------|-------------|
-| email() | Validate Email |
+| email() | Validate Email Address |
 | phone() | Validate Mobile Number |
-| aadhaar() | Validate Aadhaar |
-| pan() | Validate PAN |
-| ifsc() | Validate IFSC |
+| aadhaar() | Validate Aadhaar Number |
+| pan() | Validate PAN Number |
+| ifsc() | Validate IFSC Code |
 | gstin() | Validate GSTIN |
-| passport() | Validate Passport |
+| passport() | Validate Passport Number |
 | pincode() | Validate PIN Code |
 | url() | Validate URL |
-| ip() | Validate IP |
-| ipv4() | Validate IPv4 |
-| ipv6() | Validate IPv6 |
+| ip() | Validate IP Address |
+| ipv4() | Validate IPv4 Address |
+| ipv6() | Validate IPv6 Address |
 | uuid() | Validate UUID |
 | macAddress() | Validate MAC Address |
-| password() | Validate Password |
+| password() | Validate Password Strength |
 | creditCard() | Validate Credit Card |
 | upi() | Validate UPI ID |
-| vehicleNumber() | Validate Vehicle Number |
+| vehicleNumber() | Validate Vehicle Registration Number |
 
 ---
 
-# Usage
+# 💻 Usage
 
 ## Core PHP
 
@@ -99,9 +167,11 @@ use ITCrackers\Helper\Validation;
 
 echo Masking::email('john@example.com');
 
-var_dump(
-    Validation::email('john@example.com')
-);
+echo Masking::phone('9876543210');
+
+Validation::email('john@example.com');
+
+Validation::phone('9876543210');
 ```
 
 ---
@@ -109,19 +179,21 @@ var_dump(
 ## Laravel
 
 ```php
+<?php
+
 use ITCrackers\Helper\Masking;
 use ITCrackers\Helper\Validation;
 
-Masking::phone('8619844326');
+Masking::aadhaar('123412341234');
 
-Validation::phone('8619844326');
+Validation::aadhaar('123412341234');
 ```
 
 ---
 
-# Examples
+# 📖 Examples
 
-## Email
+## Email Masking
 
 ```php
 Masking::email('john@example.com');
@@ -135,21 +207,21 @@ jo***@example.com
 
 ---
 
-## Phone
+## Phone Masking
 
 ```php
-Masking::phone('8619844326');
+Masking::phone('9876543210');
 ```
 
 Output
 
 ```
-86******26
+98******10
 ```
 
 ---
 
-## Aadhaar
+## Aadhaar Masking
 
 ```php
 Masking::aadhaar('123412341234');
@@ -163,7 +235,7 @@ XXXXXXXX1234
 
 ---
 
-## PAN
+## PAN Masking
 
 ```php
 Masking::pan('ABCDE1234F');
@@ -177,21 +249,73 @@ ABCXXXXXXF
 
 ---
 
-## Validation
+## Email Validation
 
 ```php
 Validation::email('john@example.com');
+```
 
-Validation::phone('8619844326');
+Output
 
-Validation::aadhaar('123412341234');
-
-Validation::pan('ABCDE1234F');
+```
+true
 ```
 
 ---
 
-# Project Structure
+## Phone Validation
+
+```php
+Validation::phone('9876543210');
+```
+
+Output
+
+```
+true
+```
+
+---
+
+## Aadhaar Validation
+
+```php
+Validation::aadhaar('123412341234');
+```
+
+Output
+
+```
+true
+```
+
+---
+
+## PAN Validation
+
+```php
+Validation::pan('ABCDE1234F');
+```
+
+Output
+
+```
+true
+```
+
+---
+
+# 🧪 Running Tests
+
+Run PHPUnit tests.
+
+```bash
+vendor/bin/phpunit
+```
+
+---
+
+# 📁 Project Structure
 
 ```
 itcrackers-helper/
@@ -203,7 +327,9 @@ itcrackers-helper/
 │   └── ...
 │
 ├── tests/
+│
 ├── composer.json
+├── phpunit.xml
 ├── README.md
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
@@ -213,79 +339,107 @@ itcrackers-helper/
 
 ---
 
-# Versioning
+# 🔖 Versioning
 
-Semantic Versioning is followed.
+This project follows **Semantic Versioning (SemVer)**.
 
 | Version | Description |
 |----------|-------------|
-| v1.0.0 | Initial Release |
-| v1.1.0 | New Features |
-| v1.1.1 | Bug Fixes |
+| Major (X.0.0) | Breaking Changes |
+| Minor (1.X.0) | New Features |
+| Patch (1.0.X) | Bug Fixes |
+
+Example
+
+```
+v1.0.0
+v1.1.0
+v1.1.1
+v1.2.0
+v2.0.0
+```
 
 ---
 
-# Changelog
+# 📜 Changelog
 
-See the **CHANGELOG.md** file for release history.
+See the **CHANGELOG.md** file for complete release history.
 
 ---
 
-# Contributing
+# 🤝 Contributing
 
-Contributions are welcome.
+Contributions are always welcome.
 
-1. Fork the repository
-2. Create a new branch
+### Development Workflow
+
+```bash
+git clone https://github.com/ITCrackers/helper.git
+
+cd helper
+
+composer install
+```
+
+Create a feature branch.
 
 ```bash
 git checkout -b feature/new-feature
 ```
 
-3. Commit changes
+Commit your changes.
 
 ```bash
 git commit -m "Add new feature"
 ```
 
-4. Push
+Push your branch.
 
 ```bash
 git push origin feature/new-feature
 ```
 
-5. Create a Pull Request
+Finally, create a Pull Request.
 
 ---
 
-# Reporting Issues
+# 🔒 Security
 
-If you find any issues or have feature requests, please create a GitHub Issue.
-
----
-
-# Support
-
-If you like this package, please consider giving it a ⭐ on GitHub.
+If you discover any security vulnerability, please create a private issue or contact the maintainer before publicly disclosing it.
 
 ---
 
-# License
+# ⭐ Support
 
-This project is licensed under the MIT License.
+If you find this package useful, please consider:
 
-See the **LICENSE** file for details.
+- ⭐ Starring the repository on GitHub
+- 🐞 Reporting bugs
+- 💡 Suggesting new features
+- 🤝 Contributing to the project
 
 ---
 
-# Author
+# 📄 License
+
+This package is open-sourced software licensed under the **MIT License**.
+
+See the **LICENSE** file for more information.
+
+---
+
+# 👨‍💻 Author
 
 **ITCrackers**
 
-GitHub: https://github.com/ITCrackers
+GitHub
 
-Packagist: https://packagist.org/packages/itcrackers/helper
+https://github.com/ITCrackers
+
+Packagist
+
+https://packagist.org/packages/itcrackers/helper
 
 ---
 
-Made with ❤️ by **ITCrackers**
+## ❤️ Made with PHP by ITCrackers
