@@ -52,8 +52,8 @@ A lightweight, framework-independent PHP utility package that provides **Masking
 
 | Software | Minimum Version |
 |----------|-----------------|
-| PHP | 8.2+ |
-| Composer | 2.5+ |
+| PHP | 7.0+ |
+| Composer | 2.4+ |
 
 ---
 
@@ -62,8 +62,7 @@ A lightweight, framework-independent PHP utility package that provides **Masking
 | Platform | Support |
 |----------|---------|
 | Core PHP | ✅ |
-| Laravel 11 | ✅ |
-| Laravel 12 | ✅ |
+| Laravel 8–13 | ✅ |
 | Symfony | ✅ |
 | CodeIgniter | ✅ |
 | CakePHP | ✅ |
